@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Enter New Patient: </h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.surname.label }}<br>
+        {{ form.surname(size=32) }}<br>
+        {{ form.forename.label }}<br>
+        {{ form.forename(size=32) }}<br>
+        {{ form.DOB.label }}<br>
+        {{ form.DOB(size=32) }}<br>
+        {{ form.Address1.label }}<br>
+        {{ form.Address1(size=32) }}<br>
+        {{ form.Address2.label }}<br>
+        {{ form.Address2(size=32) }}<br>
+        {{ form.Town.label }}<br>
+        {{ form.Town(size=32) }}<br>
+        {{ form.County.label }}<br>
+        {{ form.County(size=32) }}<br>
+        {{ form.Post_code.label }}<br>
+        {{ form.Post_code(size=32) }}<br>
+
+        {% for error in form.errors %}
+        <span style="color: white;">Please enter: [{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

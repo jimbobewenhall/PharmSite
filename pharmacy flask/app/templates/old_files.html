@@ -1,0 +1,23 @@
+<html>
+<html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Old scripts </h1>
+
+{% for table in tables %}
+{{titles[loop.index]}}
+{{ table|safe }}
+{% endfor %}
+
+
+</br>
+</br>
+</br>
+
+<a href="/old_files/clear"> All Scripts Dismantled </a>
+
+
+{% endblock %}
+
+</html>

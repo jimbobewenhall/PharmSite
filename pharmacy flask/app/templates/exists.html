@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{loc}}</h1>
+<h1>Enter New Location: </h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+
+        {{ form.name(size=32) }}
+
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
+
+</html>
